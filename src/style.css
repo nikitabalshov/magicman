@@ -9,22 +9,25 @@ header{
     color:white;
 }
 .navbar{
-    margin:auto ;
+    margin:auto
 }
 .navbar ul {
-    position: absolute; /* Абсолютное позиционирование относительно ближайшего позиционированного предка, в нашем случае экрана. */
-    background: linear-gradient(0deg, rgb(45, 45, 231) 0%, rgba(21, 15, 97, 0.72) 37%, rgb(0, 0, 0) 100%);   
-    flex-direction: column; /* Элементы списка будут выстраиваться вертикально (необходимо для флекс-контейнера) */
-    width: 30%; /* Ширина списка равна 30% от ширины родительского элемента */
-    height: auto; /* Высота автоматически подстраивается под содержимое */
-    top: 68px; /* Расположение списка на 68px ниже от верхнего края родительского элемента */
-    left: -40%; /* Расположение списка на 40% ширины родительского элемента слева (вне видимой области) */
-    z-index: 2; /* Уровень стека элемента, чтобы он перекрывал другие элементы с меньшим z-index */
+    position: relative; /* Абсолютное позиционирование относительно ближайшего позиционированного предка, в нашем случае экрана. */
+    display: flex;
+    list-style: none;
+     /* Элементы списка будут выстраиваться вертикально (необходимо для флекс-контейнера) */
 }
+.burger{
+    display:none;
+}
+
 
 /* Стили для элементов списка внутри навигационного меню */
 .navbar ul li {
-    margin-top: 10px; /* Отступ сверху для элементов списка */
+    margin:auto 0;
+    width:90px;
+    height: 25px;
+
 }
 
 /* Стили для элемента списка при наведении */
@@ -36,7 +39,6 @@ header{
     color: white;
 }
 
-/* Стили для ссылок в элементах списка при наведении */
 .navbar ul li a:hover {
     color: white; /* Цвет текста ссылки становится белым при наведении */
 }
@@ -48,82 +50,63 @@ header{
 
 .navbar ul li a {
     text-decoration: none; 
-    color:rgb(216, 216, 216); /* Устанавливает цвет текста ссылок черным */
-    margin: auto; /* Центрирует текст внутри элемента списка */
+    color:rgb(216, 216, 216); 
+    padding-left:25px;
+    padding-top: 3px;
+    text-decoration: none;
+    
 }
 
-.navbar .entry {
-    display: flex; /* Устанавливает div как flex-контейнер */
-    margin-right: 20px; /* Добавляет отступ справа у div */
-    margin:auto 20px;
-}
-
-.navbar .entry a {
-    text-decoration: none; /* Убирает подчеркивание у ссылок в div */
-    color: rgb(216, 216, 216); /* Устанавливает цвет текста ссылок черным */
-    margin: 20px; /* Центрирует текст внутри div */
-}
-
-.navbar .entry:hover {
+.entry:hover {
     background-color: #a81212; /* Изменяет фоновый цвет div при наведении курсора */
     border-radius: 20px; /* Скругляет углы div при наведении курсора */
 }
-.burger {
-    display: block; 
-    position: relative; /* Относительное позиционирование для внутренних элементов */
-    width: 50px; /* Ширина контейнера */
-    height: 40px; /* Высота контейнера */
-    margin:auto; /* Автоматические отступы по бокам для центрирования */
-    margin-left: 20px; /* Отступ слева */
-    margin-right: 10px; /* Отступ справа */
+.navbar ul .work {
+    position: relative; /* Set the position to relative to enable absolute positioning of its child elements */
+    display: flex; /* Use flexbox for layout */
+    z-index: 10; /* Set stacking order */
 }
 
-
-.burger span {
-    position: absolute; /* Абсолютное позиционирование для расположения полосок внутри контейнера */
-    width: 30px; /* Ширина каждой полоски */
-    left: 5px; /* Отступ от левого края контейнера */
-    height: 3px; /* Высота полоски */
-    background-color: rgb(255, 255, 255); /* Цвет полоски */
-    bottom: 20px; /* Расположение полоски от нижнего края контейнера */
-}
-.burger span:nth-child(1) {
-    transform: translateY(-10px); /* Перемещение первой полоски вверх на 10px */
-}
-/* Стили для третьей полоски бургер-меню */
-.burger span:nth-child(3) {
-    transform: translateY(10px); /* Перемещение третьей полоски вниз на 10px */
-}
-.navbar ul li:nth-child(1) {
-    margin-top: 20px; /* Увеличение отступа сверху для первого элемента списка */
+.navbar ul .work ul {
+    position: absolute; /* Position the dropdown menu absolutely relative to its nearest positioned ancestor */
+    flex-direction: column; /* Arrange children in a column */
+    left: 0%; /* Align the left edge of the dropdown with the parent */
+    top: 100%; /* Position the top of the dropdown just below the parent */
+    width: 100px; /* Set a fixed width for the dropdown */
+    display: none; /* Initially hide the dropdown */
+    padding: 0; /* Remove default padding */
+    z-index: 20; /* Set a higher stacking order for the dropdown */
 }
 
-/* Стили для ссылок внутри элементов списка */
-.navbar ul li a {
-    margin-left: 0; /* Установка нулевого отступа слева для ссылок */
-    font-size: 1.2rem; /* Установка размера шрифта в 1.2rem */
+.navbar ul .work ul li {
+    z-index: 20; /* Ensure list items have the same stacking order as the parent */
+    background-color: #050d7a; /* Set background color */
+    margin-bottom: 2px; /* Add space between items */
 }
 
-/* Стили для навигационного меню при открытом состоянии */
-.navbar.open ul {
-    transform: translateX(100%); /* Перемещение меню на 100% ширины вправо (выдвигается за пределы видимой области) */
-    transition: 0.7s ease-in-out; /* Плавный переход эффекта с продолжительностью 0.7 секунды */
+.navbar ul .work:hover ul {
+    display: block; /* Show the dropdown when hovering over the parent */
 }
 
-/* Стили для первой полоски бургер-меню при открытом состоянии */
-.navbar.open .burger span:nth-child(1) {
-    transform: translateY(0) rotate(45deg); /* Поворачивает первую полоску на 45 градусов и возвращает в исходное положение по вертикали */
+.navbar ul .work ul li:hover {
+    background-color: white; /* Change background color on hover */
+    border-radius: 0; /* Remove border radius */
+    
+}
+.navbar ul .work ul li a:hover {
+    border-radius: 0; /* Remove border radius */
+    color:#050d7a;
+    
+}
+.entry {
+    display: flex; 
+    margin:auto 20px;
+    margin-right: 30px;
+    margin-top: 30px;
+    color: rgb(216, 216, 216); 
+    text-decoration: none;
 }
 
-/* Стили для второй полоски бургер-меню при открытом состоянии */
-.navbar.open .burger span:nth-child(2) {
-    opacity: 0; /* Делает вторую полоску полностью прозрачной (не видимой) */
-}
-
-/* Стили для третьей полоски бургер-меню при открытом состоянии */
-.navbar.open .burger span:nth-child(3) {
-    transform: translateY(0) rotate(-45deg); /* Поворачивает третью полоску на -45 градусов и возвращает в исходное положение по вертикали */
-}
 
 
 /* Контейнер с элементами, использующий Flexbox для адаптивного размещения */
@@ -197,7 +180,7 @@ p {
     display: flex; /* Применение Flexbox для управления содержимым */
 }
 
-.video1 video {
+.video1 iframe {
     margin: auto; /* Центрирование видео по горизонтали */
 }
 
@@ -214,15 +197,22 @@ p {
     flex-direction: column; /* Контейнер для аудио, элементы располагаются вертикально */
 }
 
-.audio1, .audio2, .audio3 {
+.audio1{
     display: flex;
     flex-direction: column; /* Внутренние элементы располагаются вертикально */
     margin-top: 20px; /* Отступ сверху для каждого аудио-блока */
+}
+.audio1 h3{
+    text-align: center;
+    color:white
 }
 
 .audio1 audio, .audio2 audio, .audio3 audio {
     width: 60%; /* Аудиоплееры занимают 60% ширины контейнера */
     margin: auto; /* Центрирование аудиоплееров по горизонтали */
+}
+audio{
+    padding-top:15px;
 }
 
 .audio1 img, .audio2 img, .audio3 img {
@@ -274,6 +264,55 @@ footer {
 footer a {
     margin-right: 10px; /* Отступ справа у ссылок в футере */
 }
+.form {
+    flex-direction: column; /* Arrange the children of the .form container in a column layout */
+}
+
+.form form {
+    display: flex; /* Use flexbox for the form layout */
+    flex-direction: column; /* Arrange form elements in a column */
+}
+
+.form form fieldset {
+    display: flex; /* Use flexbox for the fieldset layout */
+    flex-direction: column; /* Arrange fieldset elements in a column */
+    width: 50%; /* Set the width of the fieldset to 50% of the container */
+    margin: auto; /* Center the fieldset horizontally */
+    margin-top: 30px; /* Add a margin of 30px to the top */
+    margin-bottom: 10px; /* Add a margin of 10px to the bottom */
+    border-radius: 20px;
+}
+
+.form form fieldset input {
+    margin-bottom: 10px; /* Add a margin of 10px to the bottom of each input element */
+    border-radius: 7px;
+}
+
+.form form fieldset legend {
+    text-align: center; /* Center the legend text */
+    font-size: 1.2rem; /* Set the font size of the legend text to 1.2rem */
+    font-weight: bold; /* Make the legend text bold */
+    color:white;
+}
+.form form fieldset label {
+    color:white
+}
+
+.form form button {
+    width: 200px; /* Set the width of the button to 200px */
+    font-size: 1.2rem; /* Set the font size of the button text to 1.2rem */
+    background-color: #24779b; /* Set the background color of the button */
+    color: white; /* Set the text color of the button to white */
+    margin: auto; /* Center the button horizontally */
+    margin-bottom: 20px; /* Add a margin of 20px to the bottom */
+}
+
+.form form button:hover {
+    font-size: 1.2rem; /* Maintain the font size of the button text on hover */
+    background-color: #91130c; /* Change the background color of the button on hover */
+    color: rgb(248, 243, 243); /* Change the text color of the button on hover */
+}
+
 
 
 @media (max-width: 700px) {
@@ -283,7 +322,7 @@ footer a {
         display: flex;
         flex-direction: column; /* Переключение на вертикальный макет */
     }
-    
+
     .person {
         display: flex;
         flex-direction: column; /* Внутренние элементы располагаются вертикально */
@@ -350,6 +389,92 @@ footer a {
         width: 95%; /* Изображения книг занимают 95% ширины контейнера */
         height: auto; /* Высота автоматически подстраивается под ширину */
     }
+    .burger {
+        display: block; 
+        position: relative; /* Относительное позиционирование для внутренних элементов */
+        width: 50px; /* Ширина контейнера */
+        height: 40px; /* Высота контейнера */
+        margin:auto; /* Автоматические отступы по бокам для центрирования */
+        margin-top:20px; 
+        margin-right: 10px; /* Отступ справа */
+
+    }
+    
+    .burger span {
+        position: absolute; /* Абсолютное позиционирование для расположения полосок внутри контейнера */
+        width: 30px; /* Ширина каждой полоски */
+        left: 5px; /* Отступ от левого края контейнера */
+        height: 3px; /* Высота полоски */
+        background-color: rgb(255, 255, 255); /* Цвет полоски */
+        bottom: 20px; /* Расположение полоски от нижнего края контейнера */
+    }
+    .burger span:nth-child(1) {
+        transform: translateY(-10px); /* Перемещение первой полоски вверх на 10px */
+    }
+    /* Стили для третьей полоски бургер-меню */
+    .burger span:nth-child(3) {
+        transform: translateY(10px); /* Перемещение третьей полоски вниз на 10px */
+    }
+    .navbar ul li:nth-child(1) {
+        margin-top: 20px; /* Увеличение отступа сверху для первого элемента списка */
+    }
+    .navbar ul {
+        position: absolute; /* Абсолютное позиционирование относительно ближайшего позиционированного предка, в нашем случае экрана. */
+        background: white;   
+        flex-direction: column; /* Элементы списка будут выстраиваться вертикально (необходимо для флекс-контейнера) */
+        width: 30%; /* Ширина списка равна 30% от ширины родительского элемента */
+        height: auto; /* Высота автоматически подстраивается под содержимое */
+        top: 89px; /* Расположение списка на 68px ниже от верхнего края родительского элемента */
+        right: -40%; /* Расположение списка на 40% ширины родительского элемента слева (вне видимой области) */
+        z-index: 2; /* Уровень стека элемента, чтобы он перекрывал другие элементы с меньшим z-index */
+    }
+    
+    /* Стили для ссылок внутри элементов списка */
+    .navbar ul li a {
+        margin-left: 0; /* Установка нулевого отступа слева для ссылок */
+        font-size: 1.4rem; /* Установка размера шрифта в 1.2rem */
+    }
+    
+    /* Стили для навигационного меню при открытом состоянии */
+    .navbar.open ul {
+        transform: translateX(-100%); /* Перемещение меню на 100% ширины вправо (выдвигается за пределы видимой области) */
+        transition: 0.7s ease-in-out; /* Плавный переход эффекта с продолжительностью 0.7 секунды */
+    }
+    
+    /* Стили для первой полоски бургер-меню при открытом состоянии */
+    .navbar.open .burger span:nth-child(1) {
+        transform: translateY(0) rotate(45deg); /* Поворачивает первую полоску на 45 градусов и возвращает в исходное положение по вертикали */
+    }
+    
+    /* Стили для второй полоски бургер-меню при открытом состоянии */
+    .navbar.open .burger span:nth-child(2) {
+        opacity: 0; /* Делает вторую полоску полностью прозрачной (не видимой) */
+    }
+    
+    /* Стили для третьей полоски бургер-меню при открытом состоянии */
+    .navbar.open .burger span:nth-child(3) {
+        transform: translateY(0) rotate(-45deg); /* Поворачивает третью полоску на -45 градусов и возвращает в исходное положение по вертикали */
+    }
+    .entry {
+        display: flex; 
+        margin:auto 0;
+        color: rgb(216, 216, 216); 
+        text-decoration: none;
+    }
+    .navbar ul .work ul {
+        position: absolute; /* Position the dropdown menu absolutely relative to its nearest positioned ancestor */
+        flex-direction: column; /* Arrange children in a column */
+        left: 100%; /* Align the left edge of the dropdown with the parent */
+        top: 100%; /* Position the top of the dropdown just below the parent */
+        width: 100px; /* Set a fixed width for the dropdown */
+        display: none; /* Initially hide the dropdown */
+        padding: 0; /* Remove default padding */
+        z-index: 20; /* Set a higher stacking order for the dropdown */
+    }
+    .form form fieldset{
+        width: 65%;
+    }
+    
 }
 
 @media (min-width: 700px) and (max-width: 900px) {
@@ -362,5 +487,9 @@ footer a {
         width: 320px; /* Ширина изображения фиксирована */
         height: 200px; /* Высота изображения фиксирована */
         margin: auto; /* Центрирование изображения по горизонтали */
+    }
+
+    .form form fieldset{
+        width: 80%;
     }
 }

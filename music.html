@@ -9,7 +9,7 @@
 </html>
 <body>
     <header>
-        <nav class="navbar open">
+        <nav class="navbar">
             <div>
                 <img src="/src/public/logos/skull.svg" width="80" height="80" alt="logo">
             </div>
@@ -18,33 +18,41 @@
                 <li><a href="video.html">Video</a></li>
                 <li><a href="#">Music</a></li>
                 <li><a href="book.html">Book</a></li>
+                <li class="work"><a href="#">Work &bigtriangledown;</a>
+                    <ul>
+                        <li><a href="form.html">Form</a></li>
+                        <li><a href="math.html">Math</a></li>
+                        <li><a href="api.html">API</a></li>
+                    </ul>
+                </li>
             </ul>
+            <a href="https://ku.edu.kz" class="entry">Entry</a> 
             <div>
-                <a href="https://ku.edu.kz" class="entry">Entry</a>
+                <div class="burger" id="burger2">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </nav>
     </header>
-    <div>
-        <div class="col-12 align-content-center">
-            <main class = "container align-center">
-                <section class = "col-8 mx-5">
-                    <h3 class="mx-5 px-3 pt-4" >Ogryzerk-Glory</h3>
-                    <img src = "/src/public/images/glory.jfif" width = 320 height = 200>
-                    <audio class="m-2 mt-3" src = "/src/public//audio/GLORY.mp3" controls type = "audio/mp3"></audio>
-                </section>
-                <section class = "col-8 mx-5">
-                    <h3 class="mx-5 px-3 pt-4" >Ogryzerk-Aura</h3>
-                    <img src = "/src/public/images/aura.jfif" width = 320 height = 200>
-                    <audio class="m-2 mt-3" src = "/src/public//audio/AURA.mp3" controls type = "audio/mp3"></audio>
-                </section>
-                <section>
-                    <h3>Imagine Dragons-KID</h3>
-                    <img src = "/src/public/images/KID.jfif" width = 320 height = 200>
-                    <audio class="m-2 mt-3" src = "/src/public//audio/audio1.mp3" controls type = "audio/mp3"></audio>
-                </section>
-            </main>
-        </div>
-    </div>
+    <main class = "audio">
+        <section class = "audio1">
+            <h3>Ogryzerk-Glory</h3>
+            <img src = "/src/public/images/glory.jfif" width = 320 height = 200>
+            <audio class="" src = "/src/public//audio/GLORY.mp3" controls type = "audio/mp3"></audio>
+        </section>
+        <section class = "audio1">
+            <h3>Ogryzerk-Aura</h3>
+            <img src = "/src/public/images/aura.jfif" width = 320 height = 200>
+            <audio class="m-2 mt-3" src = "/src/public//audio/AURA.mp3" controls type = "audio/mp3"></audio>
+        </section>
+        <section class = "audio1">
+            <h3>Imagine Dragons-KID</h3>
+            <img src = "/src/public/images/KID.jfif" width = 320 height = 200>
+            <audio class="m-2 mt-3" src = "/src/public//audio/audio1.mp3" controls type = "audio/mp3"></audio>
+        </section>
+    </main>
     <footer class="">
         <div class="">
             <a href="">
@@ -58,5 +66,6 @@
             </a>
         </div>
     </footer>
+    <script src="/js/script.js"></script>
 </body>
 </html>

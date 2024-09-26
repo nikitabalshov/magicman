@@ -11,6 +11,9 @@ header{
 html{
     min-height: 1100px;
 }
+body{
+    padding:0;
+}
 .navbar{
     margin:auto
 }

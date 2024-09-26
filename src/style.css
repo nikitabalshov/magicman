@@ -8,6 +8,9 @@ header{
     с максимальным пространством между ними */
     color:white;
 }
+html{
+    min-height: 1100px;
+}
 .navbar{
     margin:auto
 }

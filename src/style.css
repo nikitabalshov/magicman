@@ -303,6 +303,9 @@ footer a {
 .form form fieldset label {
     color:white
 }
+label{
+    color: white;
+}
 
 .form form button {
     width: 200px; /* Set the width of the button to 200px */
@@ -409,6 +412,7 @@ footer a {
         contain: layout;
 
     }
+   
     
     .burger span {
         position: absolute; /* Абсолютное позиционирование для расположения полосок внутри контейнера */

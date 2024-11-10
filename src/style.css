@@ -398,6 +398,7 @@ label{
         flex-direction: column; /* Переключение на вертикальный макет */
     }
     body{
+        color:white;
         overflow-x: hidden;
     }
 
@@ -554,6 +555,25 @@ label{
     .form form fieldset{
         width: 65%;
     }
+    .API{
+        display: flex;
+        flex-direction:column;
+        color:white;
+    }
+    .API section{
+        display:flex;
+        flex-direction: row;
+        width:100%;
+        margin: 20px auto auto auto;
+    }
+    .API img{
+        margin: auto;
+        width:48%;
+        height:auto;
+    }
+    .API Span{
+        margin:auto
+    }  
     
 }
 
@@ -572,4 +592,44 @@ label{
     .form form fieldset{
         width: 80%;
     }
+    .API{
+        display: flex;
+        flex-direction:column;
+        color:white;
+    }
+    .API section{
+        display:flex;
+        flex-direction: row;
+        width:100%;
+        margin: 20px auto auto auto;
+    }
+    .API img{
+        margin: auto;
+        width:48%;
+        height:auto;
+    }
+    .API Span{
+        margin:auto
+    }  
+}
+@media (min-width: 900px){
+    .API{
+        display: flex;
+        flex-direction:column;
+        color:white;
+    }
+    .API section{
+        display:flex;
+        flex-direction: row;
+        width:70%;
+        margin: 20px auto auto auto;
+    }
+    .API img{
+        margin: auto;
+        width:48%;
+        height:auto;
+    }
+    .API Span{
+        margin:auto
+    }  
 }
